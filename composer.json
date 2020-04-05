@@ -1,0 +1,30 @@
+{
+    "name": "jadwigo/geosync",
+    "description": "Lookup, fix and update geolocation data in content",
+    "type": "bolt-extension",
+    "keywords": [
+        "geolocation",
+        "address",
+        "location"
+    ],
+    "require": {
+        "bolt/bolt": "^3.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lodewijk Evers",
+            "email": "jadwigo@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Bolt\\Extension\\Jadwigo\\GeoSync\\": "src"
+        }
+    },
+    "extra": {
+        "bolt-class": "Bolt\\Extension\\Jadwigo\\GeoSync\\GeoSyncExtension"
+    }
+}

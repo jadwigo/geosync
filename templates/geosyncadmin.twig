@@ -1,0 +1,36 @@
+{% extends '@bolt/_base/_page-nav.twig' %}
+
+{% block page_title %}GeoSync Admin page{% endblock page_title %}
+
+{% block page_main %}
+<div>
+    {{ body }}
+
+    <p>
+        {{ geosynctotals() }}
+    </p>
+    {% if table is defined %}
+        <table class="dashboardlisting listing {{ table.class|default('') }}">
+            {% for row in table.rows|default([]) %}
+                <tr class="{{ row.class|default('') }}">
+                    {% for cell in row.cells %}
+                        {% if row.class == 'header' %}
+                            <th class="{{ cell.class|default('') }}">
+                                {{ cell.value }}
+                            </th>
+                        {% else %}
+                            <td class="{{ cell.class|default('') }}">
+                                {{ cell.value|raw }}
+                            </td>
+                        {% endif %}
+                    {% else %}
+                        <td>Table is empty.</td>
+                    {% endfor %}
+                </tr>
+            {% else %}
+                <tr><td>&nbsp;</td></tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</div>
+{% endblock page_main %}

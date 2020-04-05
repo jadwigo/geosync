@@ -1,0 +1,8 @@
+# most of these values will be set by default
+
+# usually this should be google geolocation
+# provider: https://geolocate.google.com/query
+
+# if authkey is not set here
+# the default google_api_key from the main config.yml wil be used
+# authkey: null
